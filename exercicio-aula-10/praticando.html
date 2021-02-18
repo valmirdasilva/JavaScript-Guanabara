@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Praticando JS</title>
+    </head>
+    <style>
+        body {
+            background-color: grey;
+            font: normal 18pt Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        input {
+            width: 200px;
+            height: 36px;
+            border-radius: 5px;
+        }
+
+        div#res {
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+        }
+
+        input#botao {
+            height: 40px;
+            margin-left: 15px;
+        }
+        div#muda{
+            width: 150px;
+            
+        }
+    </style>
+
+    <body>
+        <h1>Nosso somador</h1>
+
+        <input type="number" name="teste1" id="teste1"> +
+        <input type="number" name="teste2" id="teste2">
+        <input type="button" value="SOMAR" id="botao" onclick="soma()">
+        <div id="res">VEJA O RESULTADO</div>
+
+        <div id="muda">
+            <h4>MUDA DE COR</h4>
+        </div>
+        <script>
+            function soma() {
+
+                let t1 = document.getElementById('teste1');
+                let t2 = document.getElementById('teste2');
+                let res = document.getElementById('res');
+                let te1 = Number(t1.value);
+                let te2 = Number(t2.value);
+                let total = te1 + te2;
+                res.innerHTML = `O total da soma é <b> ${total} <b/>`
+            };
+
+            muda.addEventListener('click', clicar);
+            muda.addEventListener('mouseenter', entrou);
+            muda.addEventListener('mouseout', sair);
+
+            function clicar () {
+                let muda = document.getElementById('muda');
+                muda.innerHTML = 'clicou';
+                muda.style.background = 'green'
+                
+            }
+        </script>
+    </body>
+
+</html>
