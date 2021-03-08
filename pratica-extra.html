@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS</title>
+    </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: grey;
+            align-items: center;
+        }
+
+        input {
+            width: 200px;
+            font: 18pt normal Arial;
+        }
+
+        input {
+            border-radius: 5px;
+        }
+
+        .box {
+            width: 400px;
+            height: 250px;
+            background-color: rgb(194, 191, 240);
+            text-align: center;
+            padding-top: 50px;
+            border-radius: 10px;
+        }
+
+        hr {
+            border: 1px solid black
+        }
+    </style>
+
+    <body>
+        <section class="container">
+            <!-- FORM DOS GRINGO-->
+            <div class="d-flex justify-content-center mt-5">
+
+                <div class="box">
+                    <H1>Verificador</H1>
+                    <form action="" onsubmit="return verifica()">
+                        <input type="text" name="verifica" id="verifica" required="required">
+                    </form>
+                    <input type="button" value="submit" name="submit" onclick="aperta()"></input>
+                    <div id="res"></div>
+                </div>
+
+            </div>
+            <script>
+                function aperta() {
+                    let ver = document.getElementById('verifica')
+                    let res = document.getElementById('res')
+
+                    res.innerHTML = `<p>Seu Pais de origem é  ${ver.value} </p>`
+                    if (ver.value == 'Brasil') {
+                        res.innerHTML += '<p>Você é brasileiro(a)</p>'
+                    } else {
+                        res.innerHTML += '<p>Você é estrangeiro(a)</p>'
+                    };
+                }
+
+                function verifica() {
+                    if (document.getElementById("verifica").value == "") {
+                        alert("Por favor, preencha os campos corretamente.");
+                        return false;
+                    }
+                    return true;
+                }
+
+            </script>
+            <!-- FORM DOS GRINGO-->
+
+            <!-- LAMPADA LIGA E DESLIGA-->
+            <div class="d-flex justify-content-center mt-5">
+                <div>
+                    <img id="troca" src="./images/pic-desligada.gif" alt="lampada">
+                </div>
+                <div class="text-wrap">
+                    <button onclick="document.getElementById('troca').src='./images/pic-ligada.gif'"> Ligada</button>
+                    <button
+                        onclick="document.getElementById('troca').src='./images/pic-desligada.gif'">Desligada</button>
+                </div>
+            </div>
+            <!-- LAMPADA LIGA E DESLIGA-->
+
+            <!-- VAI SUMIR-->
+            <div class="d-flex justify-content-center mt-5">
+                <div class="text-center">
+                    <p id="sumir">Uma breve palavra de uma pessoa que está estudando <br>
+                        --Fui!! </p>
+                    <button onclick="document.getElementById('sumir').style='display:none'">Não me aperta</button>
+                </div>
+            </div>
+            <!-- VAI SUMIR-->
+            <!--UM ARRAY-->
+            <div class="d-flexd justify-content-center mt-5">
+                <div class="text-center">
+                    <h1>TESTE ARRAY</h1>
+                </div>
+                <hr>
+                <div id="minhaFuncao" class="text-center">
+                    <button onclick="exibe()">Rodar array</button>
+                </div>
+                <script>
+                    let arr = document.getElementById('minhaFuncao')
+
+                    function exibe() {
+                        var arr1 = [1, 2, 3, 4, 5]
+                        var arr2 = arr1 + ',10'
+                        arr.innerHTML = (`${arr2}`)
+                    }
+                </script>
+
+            </div>
+            <!--UM ARRAY-->
+            <!-- FORM ESCONDE E MOSTRA SENHA-->,
+            <form method="POST" class="text-center">
+                <input type="password" name="senha" id="senha">
+                <input type="button" value="mostrar senha" onclick="trocar()">
+            </form>
+            <script>
+                let tipo = document.getElementById('senha')
+                function trocar() {
+                    if (tipo.type == 'password') {
+                        tipo.type = 'text'
+                    } else {
+                        tipo.type = 'password'
+                    }
+                }
+            </script>
+            <!-- Search box -->
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: "Montserrat";
+                }
+
+                .searchbox {
+                    width: 90%;
+                    margin: 10px
+                }
+
+                .header {
+                    background: #34495e;
+                    overflow: hidden;
+                    padding: 20px;
+                    text-align: center;
+                }
+
+                .header h1 {
+                    text-transform: uppercase;
+                    color: white;
+                    margin: 0;
+                    margin-bottom: 8px;
+                }
+
+                #value {
+                    border: none;
+                    background: #2c3e50;
+                    padding: 6px;
+                    font-size: 18px;
+                    width: 80%;
+                    border-radius: 6px;
+                    color: white;
+                }
+
+                .profile {
+                    margin: 0 6px;
+                    display: flex;
+                    align-items: center;
+                    margin: 10px;
+                }
+
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    background: #2c3e50;
+                    color: white;
+                    font-size: 24px;
+                    text-align: center;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+
+                .name {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #333
+                }
+            </style>
+            <div class="searchbox">
+                <div class="header mb-5">
+                    <h1>Lista JS PURO</h1>
+                    <input onkeyup="filter()" type="text" id="value" placeholder="Pesquise aqui">
+                </div>
+                <div class="container">
+                    <div class="profile">
+                        <span class="icon">A</span>
+                        <span class="name">Ana</span>
+                    </div>
+                    <div class="profile">
+                        <span class="icon">A</span>
+                        <span class="name">Amanda</span>
+                    </div>
+                    <div class="profile">
+                        <span class="icon">B</span>
+                        <span class="name">Brenda</span>
+                    </div>
+                    <div class="profile">
+                        <span class="icon">B</span>
+                        <span class="name">Bruno</span>
+                    </div>
+                    <div class="profile">
+                        <span class="icon">C</span>
+                        <span class="name">Carol</span>
+                    </div>
+                    <div class="profile">
+                        <span class="icon">C</span>
+                        <span class="name">Carlos</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function filter() {
+
+                    var value, name, profile, i;
+
+                    value = document.getElementById('value').value.toUpperCase()
+                    profile = document.getElementsByClassName('profile')
+
+
+                    for (i = 0; i < profile.length; i++) {
+                        name = profile[i].getElementsByClassName('name');
+                        if (name[0].innerHTML.toUpperCase().indexOf(value) > -1) {
+                            profile[i].style.display = 'flex'
+                        } else {
+                            profile[i].style.display = 'none'
+                        }
+                    }
+                }
+            </script>
+            <!-- Search box -->
+
+            <!-- FILTRO COM ANGULAR-->
+<html ng-app="lista">
+<head>
+	<script src="./angular/angular.js"></script>
+	<script src="./angular/angular-messages.js"></script>
+	<script>
+		angular.module("lista", ["ngMessages"]);
+		angular.module("lista").controller("listaCtrl", function ($scope, uppercaseFilter) {
+			$scope.app = "Lista com angularJS";
+			$scope.listas = [
+				{nome: "Pedro", cidade: "Novo Hamburgo"},
+                {nome: "Júnior", cidade: "Sapiranga"},
+                {nome: "Ana", cidade: "Campo Bom"},
+                {nome: "Castro", cidade: "Novo Hamburgo"},
+                {nome: "Maria", cidade: "Porto Alegre"},
+                {nome: "João", cidade: "São Leopoldo"},
+                {nome: "Matheus", cidade: "Nova Hartz"},
+                {nome: "Marcos", cidade: "Gramado"},
+                {nome: "Julio", cidade: "Lomba Grande"},
+                {nome: "Michele", cidade: "Paraná"},
+                {nome: "Kaue", cidade: "Japão"},
+
+			];
+
+		});
+	</script>
+</head>
+<body ng-controller="listaCtrl">
+	<div class="jumbotron text-center mt-5">
+		<h3>{{app}}</h3>
+		<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
+		<table ng-show="listas.length > 0" class="table table-striped">
+			<tr>
+				<th>Nome</th>
+				<th>Cidade</th>
+
+			</tr>
+			<tr ng-class="{'selecionado negrito': lista.selecionado}" ng-repeat="lista in listas | filter:criterioDeBusca">
+				<td>{{lista.nome}}</td>
+				<td>{{lista.cidade}}</td>
+
+			</tr>
+		</table>
+		<hr/>
+
+
+	</div>
+</body>
+</html>
+            <!-- FILTRO COM ANGULAR-->
+
+        </section>
+
+
+
+
+        <footer>
+            <!-- data-->
+            <div class="d-flex justify-content-center mt-5">
+                <div class="text-center">
+                    <p id="data">
+                        <script>
+                            data.innerHTML = `${Date()}`
+                        </script>
+                </div>
+            </div>
+            <!-- data-->
+        </footer>
+    </body>
+
+
+</html>

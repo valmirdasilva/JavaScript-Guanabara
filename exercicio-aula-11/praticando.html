@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Praticando</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <style>
+        body {
+            background-color: grey;
+        }
+    </style>
+
+    <body>
+        <section class="container text-center">
+            <h1 class="mt-5">Praticando</h1>
+            <input type="text" placeholder="Escreva aqui">
+            <input type="button" value="Clique aqui">
+            <h2>Caixa exibir</h2>
+
+            <div id=exibir></div>
+        </section>
+        <script>
+            let ex = document.getElementById('exibir');
+            function exibir(){
+                exibir.style.background-color = 'red'
+            }
+        </script>
+    </body>
+
+</html>
